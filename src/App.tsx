@@ -1,12 +1,25 @@
-import { FC } from 'react';
+import { FC, useState } from "react";
+import styled from "styled-components";
+import { TemplatePick } from "./components/TemplatePick";
+import { GenerateTemplate } from "./components/GenerateTemplate";
 
-import './style.css';
-
-export const App: FC<{ name: string }> = ({ name }) => {
+export const App: FC = () => {
+  const [picked, setPicked] = useState<boolean>(false);
   return (
-    <div>
-      <h1>Hello {name}!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+    <Main>
+      {picked ? (
+        <GenerateTemplate />
+      ) : (
+        <TemplatePick setPicked={() => setPicked(true)} />
+      )}
+    </Main>
   );
 };
+
+const Main = styled.main`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d3d3d3;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+`;
