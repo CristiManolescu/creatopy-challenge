@@ -1,17 +1,16 @@
-import { FC, SetStateAction } from "react";
+import { FC, SetStateAction, useContext } from "react";
 import { bannerTemplates } from "../utils/data";
 import styled from "styled-components";
 import { Button } from "./Button/Button";
+import { TemplateContext } from "../App";
 
 interface TemplatePickProps {
   setPicked: React.Dispatch<SetStateAction<boolean>>;
 }
 
 export const TemplatePick: FC<TemplatePickProps> = ({ setPicked }) => {
-  const handleClick = () => {
-    setPicked(true);
-    console.log("test");
-  };
+  const { setTemplate } = useContext(TemplateContext);
+
   return (
     <div>
       <h1>{`Pick your favorite template`}</h1>
@@ -19,7 +18,10 @@ export const TemplatePick: FC<TemplatePickProps> = ({ setPicked }) => {
         {bannerTemplates.map((template) => (
           <Button
             key={template.name}
-            onClick={handleClick}
+            onClick={() => {
+              setPicked(true);
+              setTemplate(template.name);
+            }}
             text={template.name}
           />
         ))}

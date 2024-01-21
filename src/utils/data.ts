@@ -15,3 +15,5 @@ export const bannerTemplates = [
     weight: 1080,
   },
 ] as const;
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
