@@ -17,12 +17,12 @@ export const TemplatePick: FC<TemplatePickProps> = ({ setPicked }) => {
       <Buttons>
         {bannerTemplates.map((template) => (
           <Button
-            key={template.name}
+            key={template}
             onClick={() => {
               setPicked(true);
-              setTemplate(template.name);
+              setTemplate(template);
             }}
-            text={template.name}
+            text={template}
           />
         ))}
       </Buttons>

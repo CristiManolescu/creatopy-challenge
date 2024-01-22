@@ -12,9 +12,6 @@ export const GenerateTemplate: FC = () => {
   const { template } = useContext(TemplateContext);
   const [imageUrl, setImageUrl] = useState<string>(null);
   const [response, setResponse] = useState<string>(null);
-  // const [requestSize, setRequestSize] = useState<
-  //   "1792x1024" | "1024x1792" | "1024x1024"
-  // >("1024x1024");
   const [isGenerated, setIsGenerated] = useState<boolean>(false);
   const input = useRef<HTMLInputElement>(null);
   const handleClick = () => {
@@ -69,6 +66,7 @@ export const GenerateTemplate: FC = () => {
         />
       ) : (
         <>
+          <h1>Enter your company description below</h1>
           <Input
             inputRef={input}
             placeholder="Enter your company description"
