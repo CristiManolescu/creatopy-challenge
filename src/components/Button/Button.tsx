@@ -2,7 +2,7 @@ import { FC, MouseEventHandler } from "react";
 import styled from "styled-components";
 
 export interface ButtonProps {
-  onClick: MouseEventHandler;
+  onClick?: MouseEventHandler;
   text: string;
 }
 

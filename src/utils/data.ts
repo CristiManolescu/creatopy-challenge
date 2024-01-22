@@ -1,15 +1,18 @@
 export const bannerTemplates = [
   {
     name: "Instagram Post",
-    size: "500x500",
+    height: 500,
+    width: 500,
   },
   {
     name: "Twitter Header",
-    size: "1500x500",
+    height: 500,
+    width: 1500,
   },
   {
     name: "Story",
-    size: "1080x1920",
+    height: 1920,
+    width: 1080,
   },
 ] as const;
 
