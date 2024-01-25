@@ -1,12 +1,10 @@
-import { FC, useState } from "react";
+import { FC, useState, createContext } from "react";
 import styled from "styled-components";
 
 import { TemplatePick } from "./components/TemplatePick";
 import { GenerateTemplate } from "./components/GenerateTemplate";
 
-import * as React from "react";
-
-export const TemplateContext = React.createContext(null);
+export const TemplateContext = createContext(null);
 
 export const App: FC = () => {
   const [picked, setPicked] = useState<boolean>(false);
@@ -34,7 +32,5 @@ const Main = styled.main`
   align-items: center;
   background-color: #d3d3d3;
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border: none;
-  border-radius: 15px;
   height: 100%;
 `;
